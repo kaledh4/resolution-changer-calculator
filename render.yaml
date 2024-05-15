@@ -3,4 +3,4 @@ services:
     name: resolution-changer
     env: python
     buildCommand: pip install -r requirements.txt
-    startCommand: python app.py
+    startCommand: python APP/app.py

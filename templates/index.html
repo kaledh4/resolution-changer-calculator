@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Resolution Changer</title>
+    <style>
+        body {
+            background-color: #222;
+            color: #fff;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+            font-size: 24px;
+        }
+        form {
+            text-align: center;
+        }
+        input {
+            margin: 20px;
+            padding: 10px;
+            font-size: 20px;
+        }
+        input[type="submit"] {
+            background-color: #4CAF50;
+            color: white;
+            cursor: pointer;
+        }
+        input[type="submit"]:hover {
+            background-color: #45a049;
+        }
+        a {
+            color: white;
+            text-decoration: none;
+        }
+    </style>
+</head>
+<body>
+    <form method="POST">
+        <input type="number" name="width" placeholder="Width" required>
+        <span>x</span>
+        <input type="number" name="height" placeholder="Height" required>
+        <br>
+        <input type="number" name="percentage" placeholder="Percentage" required>
+        <br>
+        <input type="radio" name="operation" value="add" checked> Add
+        <input type="radio" name="operation" value="subtract"> Subtract
+        <br>
+        <input type="submit" value="Calculate">
+    </form>
+</body>
+</html>

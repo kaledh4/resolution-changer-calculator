@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Resolution Changer - Result</title>
+    <style>
+        body {
+            background-color: #222;
+            color: #fff;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+            font-size: 24px;
+        }
+        a {
+            color: white;
+            text-decoration: none;
+        }
+    </style>
+</head>
+<body>
+    <div>
+        <h2>Original Resolution: {{ width }}x{{ height }}</h2>
+        <p>Total Pixels: {{ original_pixels }}</p>
+        <h2>Percentage: {{ percentage }}%</h2>
+        <h2>New Resolution: {{ new_width }}x{{ new_height }}</h2>
+        <p>Total Pixels: {{ new_pixels }}</p>
+        <br>
+        <h3>Example:</h3>
+        <p>Original Resolution: {{ example_width }}x{{ example_height }}</p>
+        <p>Total Pixels: {{ example_original_pixels }}</p>
+        <p>New Resolution: {{ example_new_width }}x{{ example_new_height }}</p>
+        <p>Total Pixels: {{ example_new_pixels }}</p>
+        <br>
+        <a href="/">Calculate Another</a>
+    </div>
+</body>
+</html>

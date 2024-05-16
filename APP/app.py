@@ -10,12 +10,12 @@ def resolution_changer():
         percentage = int(request.form['percentage'])
 
         if request.form['operation'] == 'subtract':
-            percentage = 100 - percentage
+            factor = 1 - (percentage / 100)  
         else:
-            percentage += 100
+            factor = 1 + (percentage / 100) 
 
-        new_width = int(width * percentage / 100)
-        new_height = int(height * percentage / 100)
+        new_width = int(width * factor)
+        new_height = int(height * factor)
 
         original_pixels = width * height
         new_pixels = new_width * new_height

@@ -1,39 +1,86 @@
+
 <!DOCTYPE html>
 <html>
 <head>
-    <title>Resolution Changer - Result</title>
-    <style>
-        body {
-            background-color: #222;
-            color: #fff;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            height: 100vh;
-            margin: 0;
-            font-size: 24px;
+  <title>Resolution Changer - Result</title>
+  <style>
+    body {
+      background-color: #222;
+      color: #fff;
+      font-family: Arial, sans-serif;
+      font-size: 18px;
+      line-height: 1.6;
+      margin: 0;
+      padding: 20px;
         }
-        a {
-            color: white;
-            text-decoration: none;
+        .container {
+        max-width: 600px;
+        margin: 0 auto;
+        background-color: #333;
+        padding: 30px;
+        border-radius: 5px;
+        box-shadow: 0 2px 5px rgba(0, 0, 0, 0.3);
+        }
+
+        h1 {
+        font-size: 36px;
+        margin-bottom: 20px;
+        text-align: center;
+        }
+
+        h2 {
+        font-size: 24px;
+        margin-bottom: 10px;
+        }
+
+        p {
+        margin-bottom: 15px;
+        }
+
+        .example {
+        background-color: #444;
+        padding: 20px;
+        border-radius: 5px;
+        margin-top: 30px;
+        }
+
+        .button {
+        display: inline-block;
+        background-color: #007bff;
+        color: #fff;
+        text-decoration: none;
+        padding: 10px 20px;
+        border-radius: 5px;
+        margin-top: 20px;
+        }
+
+        .button:hover {
+        background-color: #0056b3;
         }
     </style>
 </head>
 <body>
+  <div class="container">
+    <h1>Resolution Changer - Result</h1>
     <div>
-        <h2>Original Resolution: {{ width }}x{{ height }}</h2>
-        <p>Total Pixels: {{ original_pixels }}</p>
-        <h2>Percentage: {{ percentage }}%</h2>
-        <h2>New Resolution: {{ new_width }}x{{ new_height }}</h2>
-        <p>Total Pixels: {{ new_pixels }}</p>
-        <br>
-        <h3>Example:</h3>
-        <p>Original Resolution: {{ example_width }}x{{ example_height }}</p>
-        <p>Total Pixels: {{ example_original_pixels }}</p>
-        <p>New Resolution: {{ example_new_width }}x{{ example_new_height }}</p>
-        <p>Total Pixels: {{ example_new_pixels }}</p>
-        <br>
-        <a href="/">Calculate Another</a>
+      <h2>Original Resolution</h2>
+      <p>Width: {{ width }} | Height: {{ height }}</p>
+      <p>Total Pixels: {{ original_pixels }}</p>
     </div>
+    <div>
+      <h2>New Resolution</h2>
+      <p>Percentage: {{ percentage }}%</p>
+      <p>Width: {{ new_width }} | Height: {{ new_height }}</p>
+      <p>Total Pixels: {{ new_pixels }}</p>
+    </div>
+    <div class="example">
+      <h2>Example</h2>
+      <p>Original Resolution: {{ example_width }}x{{ example_height }}</p>
+      <p>Total Pixels: {{ example_original_pixels }}</p>
+      <p>New Resolution: {{ example_new_width }}x{{ example_new_height }}</p>
+      <p>Total Pixels: {{ example_new_pixels }}</p>
+    </div>
+    <a href="/" class="button">Calculate Another</a>
+  </div>
 </body>
 </html>

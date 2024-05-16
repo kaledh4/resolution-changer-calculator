@@ -10,9 +10,11 @@ def resolution_changer():
         percentage = int(request.form['percentage'])
 
         if request.form['operation'] == 'subtract':
-            factor = 1 - (percentage / 100)  
+            factor = 1 - (percentage / 100)
+            displayed_percentage = -percentage
         else:
-            factor = 1 + (percentage / 100) 
+            factor = 1 + (percentage / 100)
+            displayed_percentage = percentage
 
         new_width = int(width * factor)
         new_height = int(height * factor)
@@ -22,12 +24,12 @@ def resolution_changer():
 
         example_width = 1920
         example_height = 1080
-        example_new_width = int(example_width * percentage / 100)
-        example_new_height = int(example_height * percentage / 100)
+        example_new_width = int(example_width * (1 + percentage / 100))
+        example_new_height = int(example_height * (1 + percentage / 100))
         example_original_pixels = example_width * example_height
         example_new_pixels = example_new_width * example_new_height
 
-        return render_template('result.html', width=width, height=height, percentage=percentage,
+        return render_template('result.html', width=width, height=height, percentage=displayed_percentage,
                                new_width=new_width, new_height=new_height,
                                original_pixels=original_pixels, new_pixels=new_pixels,
                                example_width=example_width, example_height=example_height,
